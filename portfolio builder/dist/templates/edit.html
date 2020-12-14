@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>{{setting.title}}|edit</title>
+        <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='favicon.ico')}}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{{url_for('static',filename='styles.css')}}" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger text-dark" href="#page-top">{{ setting.name}}</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger text-dark" target="_blank" href="/">Site &#8599;</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger text-dark"  href="/" download="index.html">Download site</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        <!-- Masthead-->
+        <header class="masthead" style="background-image: url('{{url_for('static',filename='bg-masthead.jpg')}}')">
+            <div class="container d-flex h-100 align-items-center">
+                <div class="mx-auto text-center">
+                    <h1 class="mx-auto my-0 text-uppercase bg-black">Edit</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5 bg-dark">Change the site settings and Customize it!!</h2>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <hr>
+            <h1 class="text-center">Site settings</h1>
+            <hr>
+            <div class="col-lg-8 col-md-10 col-sm-12 mx-auto">
+                <form action="/edit/1" method="POST">
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label for="title">Site title</label>
+                        <input type="text" name="title" value="{{ setting.title }}" class="form-control" id="inputEmail4">
+                        <p class="text-info">*site title will appear on the browser's tab</p>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label for="name">Site name</label>
+                        <input type="text" name="name" class="form-control" value="{{setting.name}}" id="inputPassword4">
+                        <p class="text-info">*Site name will appear on footer credits and on menu bar</p>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="tagline">Site tagline</label>
+                      <input type="text" name="tagline" value="{{setting.tagline}}" class="form-control" id="inputAddress">
+                    </div>
+                    <div class="form-group">
+                        <label for="subtagline">Site subtagline</label>
+                        <input type="text" name="subtagline" value="{{setting.subtagline}}" class="form-control" id="inputAddress">
+                      </div>
+                    <div class="form-group">
+                      <label for="button">button text</label>
+                      <input type="text" name="button" value="{{setting.button}}" class="form-control" id="inputAddress2">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="about">About</label>
+                        <input type="text" name="about" value="{{setting.about}}" class="form-control" id="inputAddress2">
+                      </div>
+                      <div class="form-group">
+                        <label for="yimg">Your image</label>
+                        <input type="file" name="yimg" accept="image" value="{{setting.yimg}}" class="form-control" id="inputAddress2">
+                        <p class="text-primary">*Pleae upload your image in the static folder of this portfolio builder</p></div>
+                      <div class="form-group">
+                        <label for="project1">Project 1</label>
+                        <input type="text" name="project1" value="{{setting.project1}}" class="form-control" id="inputAddress2">
+                      </div>
+                      <div class="form-group">
+                        <label for="project1link">Project 1 link</label>
+                        <input type="text" name="project1link" value="{{setting.project1link}}" class="form-control" id="inputAddress2">
+                      </div>
+                      <div class="form-group">
+                        <label for="img1">About Project 1</label>
+                        <input type="text" value="{{setting.project1img}}" name="img1" class="form-control" id="inputAddress2">
+                      </div>
+                      <div class="form-group">
+                        <label for="project2">Project 2</label>
+                        <input type="text" name="project2" value="{{setting.project2}}" class="form-control" id="inputAddress2">
+                      </div>
+                      <div class="form-group">
+                        <label for="project2link">Project 2 link</label>
+                        <input type="text" name="project2link" value="{{setting.project2link}}" class="form-control" id="inputAddress2">
+                      </div>
+                      <div class="form-group">
+                        <label for="img2">About Project 2</label>
+                        <input type="text" value="{{setting.project2img}}" name="img2" class="form-control" id="inputAddress2">
+                      </div>
+                      <div class="form-group">
+                        <label for="adress">Address</label>
+                        <input type="text" name="adress" value="{{setting.adress}}" class="form-control" id="inputAddress2">
+                      </div>
+                      <div class="form-group">
+                        <label for="adress">Email</label>
+                        <input type="email" name="email" value="{{setting.email}}" class="form-control" id="inputAddress2">
+                      </div>
+                      <div class="form-group">
+                        <label for="number">Phone number</label>
+                        <input type="text" name="number" value="{{setting.number}}" class="form-control" id="inputAddress2">
+                      </div>
+                      <div class="form-group">
+                        <label for="fblink">Facebook link</label>
+                        <input type="text" name="fblink" value="{{setting.fb}}" class="form-control" id="inputAddress2">
+                      </div>                      
+                      <div class="form-group">
+                        <label for="twitter">Twitter link</label>
+                        <input type="text" name="twitter" value="{{setting.twitter}}" class="form-control" id="inputAddress2">
+                      </div>                      
+                      <div class="form-group">
+                        <label for="insta">Instagram link</label>
+                        <input type="text" name="insta" value="{{setting.insta}}" class="form-control" id="inputAddress2">
+                      </div>
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                  </form>
+            </div>
+        </div>
+        <br>
+        <hr>
+<p class="text-center"><a href="/" download="index.html"><button class="btn btn-secondary">
+  Download template
+</button></a></p>
+<p class="text-info text-center">*Click on this buton to downlaod your sites file,do this only when you're done editing</p>
+        <hr>
+        <footer class="footer bg-black small text-center text-white-50"><div class="container"></div>Portfolio-builder 2020</div></footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{{url_for('static',filename='scripts.js')}}"></script>
+    </body>
+</html>
